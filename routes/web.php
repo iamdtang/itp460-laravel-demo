@@ -18,3 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
+
+// would likely be a POST request from a form submission
+Route::get('/subscribe', function () {
+    Mail::to('timcook@apple.com')->send(
+        new App\Mail\SubscriptionConfirmation('Tim Cook')
+    );
+});
