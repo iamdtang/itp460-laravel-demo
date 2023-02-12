@@ -5,7 +5,7 @@
   <ul>
     @foreach ($technologies as $technology)
       <li>
-        {{$technology}}
+        {{$technology->name}}
       </li>
     @endforeach
   </ul>

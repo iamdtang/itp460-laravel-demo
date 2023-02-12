@@ -18,8 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', function () {
+    $technologies = DB::table('technologies')->orderBy('name')->get();
+
     return view('profile', [
         'name' => 'David Tang',
-        'technologies' => ['HTML', 'JavaScript', 'PHP'],
+        'technologies' => $technologies,
     ]);
 });
