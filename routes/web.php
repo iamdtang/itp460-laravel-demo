@@ -17,11 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile', function () {
-    $technologies = DB::table('technologies')->orderBy('name')->get();
-
-    return view('profile', [
-        'name' => 'David Tang',
-        'technologies' => $technologies,
-    ]);
-});
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
